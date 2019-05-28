@@ -44,8 +44,8 @@ Considerations:
      log. One could include a backlink to the last entry using the old
      format. Or start with a specific same-as content message that
      links these. Or one could specify a way to include the old
-     messages in content, with the old hash, but I don't think we need
-     this.
+     messages in content, with the old hash. I'm learning towards the
+     same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
 
