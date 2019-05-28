@@ -18,7 +18,7 @@ field and the encoding is a bit different.
  - lipmaalink (log link)
  - hash af content
  - size in bytes
- - end-of-log?
+ - end-of-log bit
  
  - digital signature of all the previous data
 
