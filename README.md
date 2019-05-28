@@ -12,7 +12,6 @@ field and the encoding is a bit different.
 
 # Message format
 
-## Format
  - version field
  - seqno
  - backlink
@@ -21,7 +20,7 @@ field and the encoding is a bit different.
  - size in bytes
  - end-of-log?
  
- - digital signature of all the previous data, issued with the log's public key
+ - digital signature of all the previous data
 
  - content?
 
@@ -55,7 +54,7 @@ Must include the following fields from the old format: timestamp,
 author and type. Still schemaless. Encoding is also [canonical
 cbor](https://tools.ietf.org/html/rfc7049#section-3.9).
 
-The reason I like canonical cbor is that it is a well specced
+The reason I like canonical cbor is that it is a well spec'ed
 standard, there are multiple implementations and at least the js
 supports the canonical format directly.
 
@@ -64,7 +63,9 @@ Considerations:
    particular type. This would allow one to fetch all messages of a
    specific type, say books, chess or abouts and verify that the
    server hasn't left some of them out. This combined with partial
-   replication makes up for some interesting cases.
+   replication could open up for better onboarding and lighter
+   clients.
+ - FIXME: better format for private messages
 
 ## Performance
 
@@ -74,15 +75,15 @@ These are some notes on the current js implementation for 100k messages:
  - validate is 60s
    - hash of message to key is roughly 10%
    - ensuring canonical (regex) is roughly 10%
-   - libsodium verify is 80%
+   - libsodium verify is roughly 80%
 
 So this basically tells us that it will be hard to get much faster for
-stuff like initial replication. Even rust and go should be using
+stuff like initial replication. Even rust, go and c should be using
 libsodium or something similar so they shouldn't be able to much
 faster. Instead I think we should focus on things that can be used to
 improve initial replication such a seq no on type and partial
 replication.
 
 ## Links
- - SSB spec: https://spec.scuttlebutt.nz/
+ - existing SSB spec: https://spec.scuttlebutt.nz/
 
