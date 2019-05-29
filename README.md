@@ -72,7 +72,7 @@ Considerations:
 
 ## Performance
 
-These are some notes on the current js implementation for 100k messages:
+These are some notes on the current js implementation for 100k messages on my slow machine:
 
  - json stringify is 1.5s
  - validate is 60s
