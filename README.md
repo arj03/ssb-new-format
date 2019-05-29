@@ -39,7 +39,7 @@ While the above is a general format, the rest of the document will
 focus on ssb related topics.
 
 Considerations:
- - Backwards compatability:
+ - Backwards compatibility:
    - I think we should use this format for new messages only. Old stay
      the same. There is the issue of linking the new with the old
      log. One could include a backlink to the last entry using the old
