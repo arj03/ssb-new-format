@@ -53,7 +53,7 @@ Considerations:
 # Content
 
 Must include the following fields from the old format: timestamp,
-author and type. Still schemaless. Encoding is also [canonical
+author and type. Still schemaless. Encoded as [canonical
 cbor](https://tools.ietf.org/html/rfc7049#section-3.9).
 
 The reason I like canonical cbor is that it is a well spec'ed
