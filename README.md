@@ -33,7 +33,8 @@ future compatibility without changing the format, but I would rather
 keep the format simple. The version number is global consensus, so in
 that regard I'm not sure if it fits the spirit of ssb.
 
-I think we should just encode the above using cbor in the order the fields are specified.
+I think we should just encode the above using cbor in the order the
+fields are specified.
 
 While the above is a general format, the rest of the document will
 focus on ssb related topics.
@@ -49,7 +50,10 @@ Considerations:
      same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
- - Content could be included as current design or could be fetched via some other channel (blobs, dat etc.) for offchain-content. Currently learning towards including it from a latency perspective, but this is not a hard requirement.
+ - Content could be included as current design or could be fetched via
+   some other channel (blobs, dat etc.) for
+   offchain-content. Currently learning towards including it from a
+   latency perspective, but this is not a hard requirement.
 
 # Content
 
@@ -69,7 +73,9 @@ Considerations:
    replication could open up for better onboarding and lighter
    clients.
  - FIXME: better format for private messages
- - Performance of canonical cbor seems really bad, need to look into this some more. More info [here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315)
+ - Performance of canonical cbor seems really bad, need to look into
+   this some more. More info
+   [here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315)
 
 ## Performance
 
@@ -90,3 +96,4 @@ replication.
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
+ - bipf: https://github.com/dominictarr/bipf
