@@ -75,7 +75,11 @@ Considerations:
  - FIXME: better format for private messages
  - Performance of canonical cbor seems really bad, need to look into
    this some more. More info
-   [here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315)
+   [here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Might
+   also be possible to go for
+   [bipf](https://github.com/dominictarr/bipf) instead of cbor, but I
+   would rather use something with multiple implementations already
+   for the exchange format.
 
 ## Performance
 
@@ -96,4 +100,3 @@ replication.
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
- - bipf: https://github.com/dominictarr/bipf
