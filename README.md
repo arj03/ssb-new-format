@@ -1,3 +1,5 @@
+This is WIP and not fully processed
+
 # Feed
 
 Signed hash-based linked list of messages - a sigchain
@@ -31,8 +33,7 @@ future compatability without changing the format, but I would rather
 keep the format simple. The version number is global consensus, so in
 that regard I'm not sure if it fits the spirit of ssb.
 
-I think we should just encode the above using [canonical
-cbor](https://tools.ietf.org/html/rfc7049#section-3.9).
+I think we should just encode the above using cbor in the order the fields are specified.
 
 While the above is a general format, the rest of the document will
 focus on ssb related topics.
@@ -67,6 +68,7 @@ Considerations:
    replication could open up for better onboarding and lighter
    clients.
  - FIXME: better format for private messages
+ - Performance of canonical cbor seems really bad, need to look into this some more
 
 ## Performance
 
