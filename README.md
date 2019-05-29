@@ -49,6 +49,7 @@ Considerations:
      same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
+ - Content could be included as current design or could be fetched via some other channel (blobs, dat etc.) for offchain-content. Currently learning towards including it from a latency perspective, but this is not a hard requirement.
 
 # Content
 
@@ -89,4 +90,3 @@ replication.
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
-
