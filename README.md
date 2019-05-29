@@ -29,7 +29,7 @@ field and the encoding is a bit different.
 I'm a big fan of version fields on protocol which is why I added
 it. Bamboo uses
 [yamf-hash](https://github.com/AljoschaMeyer/yamf-hash) for some
-future compatability without changing the format, but I would rather
+future compatibility without changing the format, but I would rather
 keep the format simple. The version number is global consensus, so in
 that regard I'm not sure if it fits the spirit of ssb.
 
