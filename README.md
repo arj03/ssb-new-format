@@ -107,3 +107,6 @@ JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: jso
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
+ - compact legacy message representation %043+a3lLbXxJM0L7QDJ3rAKTb6sWXuAkRuhS/wOT+hQ=.sha256
+ - hsdt Hypothetical SSB Data Format) (cbor variant) %25BTnweXwHe134te24iGMOM%2Fn%2BQK6V429bLDVcUxnjI3E%3D.sha256
+ - Argument against cannonical formats for signed data  %25FI3kBXdFD6j%2BuISXluhirJm70QZpJIYzc65OX1XPJ5c%3D.sha256
