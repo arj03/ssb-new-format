@@ -100,7 +100,7 @@ replication.
 
 ## Other
 
-[Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
+JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
 
 - [cbor](https://github.com/dignifiedquire/borc) non-canonical is roughly 5 times slower than json stringify
 - [bipf](https://github.com/dominictarr/bipf) is roughly 3 times slower than json stringify
