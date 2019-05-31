@@ -58,12 +58,11 @@ Considerations:
 # Content
 
 Must include the following fields from the old format: timestamp,
-author and type. Still schemaless. Encoded as [canonical
-cbor](https://tools.ietf.org/html/rfc7049#section-3.9).
+author and type. Still schemaless. 
 
-The reason I like canonical cbor is that it is a well spec'ed
-standard, there are multiple implementations and at least the js
-supports the canonical format directly.
+I'm thinking of encoded as [canonical
+cbor](https://tools.ietf.org/html/rfc7049#section-3.9). The reason I like canonical cbor is that it is a well spec'ed
+standard and there are multiple implementations in different languages.
 
 Considerations:
  - Require a type seq that would specify the seq number for that
