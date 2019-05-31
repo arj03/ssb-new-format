@@ -7,10 +7,11 @@ Signed hash-based linked list of messages - a sigchain
 The overall goal is to seperate the transport format from the database
 format. This document deals with the transport format.
 
-A base message format that serves as a good starting point and a
-minimum of useful fields. This is more or less
+The following defines a general base message format that serves as the
+starting point for adding SSB specific considerations and content on
+top. This is more or less
 [bamboo](https://github.com/AljoschaMeyer/bamboo), except the version
-field and the encoding is a bit different.
+field and the encoding.
 
 # Message format
 
@@ -29,25 +30,22 @@ field and the encoding is a bit different.
 I'm a big fan of version fields on protocol which is why I added
 it. Bamboo uses
 [yamf-hash](https://github.com/AljoschaMeyer/yamf-hash) for some
-future compatibility without changing the format, but I would rather
-keep the format simple. The version number is global consensus, so in
-that regard I'm not sure if it fits the spirit of ssb.
+future proofability without changing the format, but I would rather
+keep the format simple and do changes as version numbers. The version
+number is global consensus, so in that regard I'm not sure if it fits
+the spirit of ssb.
 
-I think we should just encode the above using cbor in the order the
-fields are specified.
+I think we should encode the above using cbor in the order the fields
+are specified.
 
-While the above is a general format, the rest of the document will
-focus on ssb related topics.
-
-Considerations:
- - Backwards compatibility:
-   - I think we should use this format for new messages only. Old stay
-     the same. There is the issue of linking the new with the old
-     log. One could include a backlink to the last entry using the old
-     format. Or start with a specific same-as content message that
-     links these. Or one could specify a way to include the old
-     messages in content, with the old hash. I'm learning towards the
-     same-as option.
+SSB related Considerations:
+ - Backwards compatibility: I think we should use this format for new
+   messages only. Old stay the same. There is the issue of linking the
+   new with the old log. One could include a backlink to the last
+   entry using the old format. Or start with a specific same-as
+   content message that links these. Or one could specify a way to
+   include the old messages in content, with the old hash. I'm
+   learning towards the same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
  - Content could be included as current design or could be fetched via
@@ -61,8 +59,9 @@ Must include the following fields from the old format: timestamp,
 author and type. Still schemaless. 
 
 I'm leaning towards encoded as [canonical
-cbor](https://tools.ietf.org/html/rfc7049#section-3.9). The reason I like canonical cbor is that it is a well spec'ed
-standard and there are multiple implementations in different languages.
+cbor](https://tools.ietf.org/html/rfc7049#section-3.9). The reason I
+like canonical cbor is that it is a well spec'ed standard and there
+are multiple implementations in different languages.
 
 Considerations:
  - Require a type seq that would specify the seq number for that
@@ -82,7 +81,8 @@ Considerations:
 
 ## Performance
 
-These are some notes on the current js implementation for 100k messages on my slow machine:
+These are some notes on the current js implementation for 100k
+messages on my slow machine:
 
  - json stringify is 1.5s
  - validate is 60s
