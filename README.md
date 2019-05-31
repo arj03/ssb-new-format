@@ -60,7 +60,7 @@ Considerations:
 Must include the following fields from the old format: timestamp,
 author and type. Still schemaless. 
 
-I'm thinking of encoded as [canonical
+I'm leaning towards encoded as [canonical
 cbor](https://tools.ietf.org/html/rfc7049#section-3.9). The reason I like canonical cbor is that it is a well spec'ed
 standard and there are multiple implementations in different languages.
 
