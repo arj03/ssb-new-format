@@ -4,8 +4,8 @@ This is WIP and not fully processed
 
 Signed hash-based linked list of messages - a sigchain
 
-The overall goal is to seperate the transport format from the database
-format. This document deals with the transport format.
+The overall goal is to seperate the transport or signing format from
+the database format. This document deals with the signing format.
 
 The following defines a general base message format that serves as the
 starting point for adding SSB specific considerations and content on
@@ -15,7 +15,7 @@ field and the encoding.
 
 # Message format
 
- - version field
+ - version
  - seqno
  - backlink
  - lipmaalink (log link)
@@ -28,15 +28,15 @@ field and the encoding.
  - content?
 
 I'm a big fan of version fields on protocol which is why I added
-it. Bamboo uses
-[yamf-hash](https://github.com/AljoschaMeyer/yamf-hash) for some
-future proofability without changing the format, but I would rather
-keep the format simple and do changes as version numbers. The version
-number is global consensus, so in that regard I'm not sure if it fits
-the spirit of ssb.
+it. Version number indicate what to expect and makes it easier to
+reason about. The version number should have a document that describes
+exactly what to expect.
 
 I think we should encode the above using cbor in the order the fields
-are specified.
+are specified. Taking care to encode things such as hashes that can
+change in a way that allows us to upgrade them either by an extension
+as currently used or using something like
+[yamf-hash](https://github.com/AljoschaMeyer/yamf-hash.
 
 SSB related Considerations:
  - Backwards compatibility: I think we should use this format for new
@@ -52,17 +52,22 @@ SSB related Considerations:
    some other channel (blobs, dat etc.) for
    offchain-content. Currently learning towards including it from a
    latency perspective, but this is not a hard requirement.
- - Multiple signing key types: %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 # Content
 
 Must include the following fields from the old format: timestamp,
 author and type. Still schemaless. 
 
-I'm leaning towards encoded as [canonical
-cbor](https://tools.ietf.org/html/rfc7049#section-3.9). The reason I
-like canonical cbor is that it is a well spec'ed standard and there
-are multiple implementations in different languages.
+The content should be encoded in a canonical format. With the same
+encoding as the overall message format. I don't think the format needs
+very much more than what json support. It just to be well
+spec'ed. Preferably with multiple implementations already. This could
+be either cbor, bipf or something else that.
+
+While we are at it, we should support multiple signing types.
+
+Also define a better way of specifying private messages instead of it
+being just a special string.
 
 Considerations:
  - Require a type seq that would specify the seq number for that
@@ -71,14 +76,14 @@ Considerations:
    server hasn't left some of them out. This combined with partial
    replication could open up for better onboarding and lighter
    clients.
- - FIXME: better format for private messages
- - Performance of canonical cbor seems really bad, need to look into
-   this some more. More info
-   [here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Might
-   also be possible to go for
-   [bipf](https://github.com/dominictarr/bipf) instead of cbor, but I
-   would rather use something with multiple implementations already
-   for the exchange format.
+ - Performance of [canonical
+cbor](https://tools.ietf.org/html/rfc7049#section-3.9) seems really
+bad, need to look into this some more. More info
+[here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Might
+also be possible to go for [bipf](https://github.com/dominictarr/bipf)
+instead of cbor, but I would rather use something with multiple
+implementations already for the exchange format.
+ - Multiple signing key types: %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 ## Performance
 
