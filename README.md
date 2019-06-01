@@ -52,6 +52,7 @@ SSB related Considerations:
    some other channel (blobs, dat etc.) for
    offchain-content. Currently learning towards including it from a
    latency perspective, but this is not a hard requirement.
+ - Multiple signing key types: %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 # Content
 
