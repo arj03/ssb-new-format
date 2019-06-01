@@ -36,7 +36,7 @@ I think we should encode the above using cbor in the order the fields
 are specified. Taking care to encode things such as hashes that can
 change in a way that allows us to upgrade them either by an extension
 as currently used or using something like
-[yamf-hash](https://github.com/AljoschaMeyer/yamf-hash.
+[yamf-hash](https://github.com/AljoschaMeyer/yamf-hash).
 
 SSB related Considerations:
  - Backwards compatibility: I think we should use this format for new
