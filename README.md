@@ -52,6 +52,10 @@ SSB related Considerations:
    some other channel (blobs, dat etc.) for
    offchain-content. Currently learning towards including it from a
    latency perspective, but this is not a hard requirement.
+ - Might be a good idea to include attachments as proposed in
+   [birch](https://github.com/cn-uofbasel/ssb-birch)
+ - End-of-log should probably be upgraded to a status field as
+   proposed in [birch](https://github.com/cn-uofbasel/ssb-birch)
 
 # Content
 
