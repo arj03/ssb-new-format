@@ -4,8 +4,8 @@ This is WIP and not fully processed
 
 Signed hash-based linked list of messages - a sigchain
 
-The overall goal is to seperate the transport or signing format from
-the database format. This document deals with the signing format.
+The overall goal is to separate the transport and signing format from
+the database format. This document deals with the signing and transport format, but currently lacks a clear distinction in relation to the topics presented which will be remedied soon :)
 
 The following defines a general base message format that serves as the
 starting point for adding SSB specific considerations and content on
