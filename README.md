@@ -37,8 +37,8 @@ The id (or cipherlink) of the message is hash of the above fields.
  - seqno
  - size of encoded content in bytes
 
- - Content
- - Attachments
+ - content
+ - attachments
 
 I'm a big fan of version fields on protocol which is why I added
 it. Version number indicate what to expect and makes it easier to
