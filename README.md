@@ -92,19 +92,11 @@ Also define a better way of specifying private messages instead of it
 being just a special string.
 
 Considerations:
- - Require a type seq that would specify the seq number for that
-   particular type. This would allow one to fetch all messages of a
-   specific type, say books, chess or abouts and verify that the
-   server hasn't left some of them out. This combined with partial
-   replication could open up for better onboarding and lighter
+ - Require a seqno per type. This would allow one to fetch all
+   messages of a specific type, say books, chess or abouts and verify
+   that the server hasn't left some of them out. This combined with
+   partial replication could open up for better onboarding and lighter
    clients.
- - Performance of [canonical
-cbor](https://tools.ietf.org/html/rfc7049#section-3.9) seems really
-bad, need to look into this some more. More info
-[here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Might
-also be possible to go for [bipf](https://github.com/dominictarr/bipf)
-instead of cbor, but I would rather use something with multiple
-implementations already for the exchange format.
  - Multiple signing key types: %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 ## Performance
@@ -131,6 +123,11 @@ JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: jso
 
 - [cbor](https://github.com/dignifiedquire/borc) non-canonical is roughly 5 times slower than json stringify
 - [bipf](https://github.com/dominictarr/bipf) is roughly 3 times slower than json stringify
+
+Performance of [canonical
+cbor](https://tools.ietf.org/html/rfc7049#section-3.9) seems really
+bad. More info
+[here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315).
 
 [Matrix](https://matrix.org/docs/spec/appendices.html#canonical-json) also uses "canonical" json. Relevant [discussion](https://github.com/matrix-org/matrix-doc/issues/1013).
 
