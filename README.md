@@ -5,37 +5,59 @@ This is WIP and not fully processed
 Signed hash-based linked list of messages - a sigchain
 
 The overall goal is to separate the transport and signing format from
-the database format. This document deals with the signing and transport format, but currently lacks a clear distinction in relation to the topics presented which will be remedied soon :)
+the database format. This document deals with the signing and
+transport format.
 
 The following defines a general base message format that serves as the
 starting point for adding SSB specific considerations and content on
-top. This is more or less
-[bamboo](https://github.com/AljoschaMeyer/bamboo), except the version
-field and the encoding.
+top. The signing format is heavily inspired from
+[bamboo](https://github.com/AljoschaMeyer/bamboo). The "end of log
+entry should be a status field for a more open-ended system" idea was
+taken from [birch](https://github.com/cn-uofbasel/ssb-birch).
 
-# Message format
+# Message signing format
 
- - version
- - seqno
  - backlink
  - lipmaalink (log link)
  - hash af content
- - size in bytes
- - end-of-log bit
+ - status enum
  
  - digital signature of all the previous data
 
- - content?
+# Transport format
+
+ - message signing format fields
+
+ - version number
+ - seqno
+ - size of encoded content in bytes
+
+ - Content
+ - Attachments
 
 I'm a big fan of version fields on protocol which is why I added
 it. Version number indicate what to expect and makes it easier to
-reason about. The version number should have a document that describes
-exactly what to expect.
+reason about. A specific version number should have a document that
+describes exactly what to expect.
 
-I think we should encode the above using cbor in the order the fields
-are specified. Taking care to encode things such as hashes that can
-change in a way that allows us to upgrade them either by an extension
-as currently used or using something like
+Seqno makes it much easier to reason about what is being sent, so
+while not strictly not necessary, from a practical perspective I like
+them and think we should keep them.
+
+Content should be included by default, while the attachments can be
+included at the clients request. It might be the case that the content
+is not included because the sending peer has removed the content for
+various reasons. There should be a mechanism similar to blobs for
+fetching content or attachments directly.
+
+As for encoding of the above, besides just encoding it in the order
+specified, I think the biggest concern is chosing and encoding system
+that can be used for the content as well, so we only have one system
+to implement.
+
+The hash functions should be encoded in a way that allows us to
+upgrade them either by an extension as currently used or using
+something like
 [yamf-hash](https://github.com/AljoschaMeyer/yamf-hash).
 
 SSB related Considerations:
@@ -48,14 +70,6 @@ SSB related Considerations:
    learning towards the same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
- - Content could be included as current design or could be fetched via
-   some other channel (blobs, dat etc.) for
-   offchain-content. Currently learning towards including it from a
-   latency perspective, but this is not a hard requirement.
- - Might be a good idea to include attachments as proposed in
-   [birch](https://github.com/cn-uofbasel/ssb-birch)
- - End-of-log should probably be upgraded to a status field as
-   proposed in [birch](https://github.com/cn-uofbasel/ssb-birch)
 
 # Content
 
