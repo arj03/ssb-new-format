@@ -78,9 +78,8 @@ author and type. Still schemaless.
 
 The content should be encoded in a canonical format. With the same
 encoding as the overall message format. I don't think the format needs
-very much more than what json support. It just to be well
-spec'ed. Preferably with multiple implementations already. This could
-be either cbor, bipf or something else that.
+very much more than what json support. Most importantly it must be
+well spec'ed. Preferably with multiple existing implementations.
 
 While we are at it, we should support multiple signing types.
 
