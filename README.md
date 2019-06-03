@@ -114,6 +114,8 @@ JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: jso
 - [cbor](https://github.com/dignifiedquire/borc) non-canonical is roughly 5 times slower than json stringify
 - [bipf](https://github.com/dominictarr/bipf) is roughly 3 times slower than json stringify
 
+[Matrix](https://matrix.org/docs/spec/appendices.html#canonical-json) also uses "canonical" json. Relevant [discussion](https://github.com/matrix-org/matrix-doc/issues/1013).
+
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
  - compact legacy message representation %043+a3lLbXxJM0L7QDJ3rAKTb6sWXuAkRuhS/wOT+hQ=.sha256
