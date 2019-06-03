@@ -22,11 +22,16 @@ taken from [birch](https://github.com/cn-uofbasel/ssb-birch).
  - hash af content
  - status enum
  
- - digital signature of all the previous data
+The digital signature of the above fields will be hmac'ed with the
+signing cap just as in the current system, to make sure that messages
+from one network are never valid in another.
+
+The id (or cipherlink) of the message is hash of the above fields.
 
 # Transport format
 
  - message signing format fields
+ - signature
 
  - version number
  - seqno
