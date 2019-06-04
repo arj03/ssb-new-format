@@ -117,6 +117,40 @@ Rejected considerations:
    general concept of the same idea, we should strive to keep the
    core as minimal as possible.
 
+# Replication / RPC
+
+This section is currently just notes:
+
+- ssb-ebt: replicate will replicate multiple feeds
+- Legacy replication (ssb-replicate) createHistoryStream per feed
+- blobs: get (max size option), createWants
+
+On initial sync:
+
+@Piet: This (replication limiter) module does what it's intended to
+do, but it turns out the bottleneck is not actually in replication as
+we originally thought
+(%HJTzjmTcr8FsKt34wmvN5ett4imneEzHp7dCab2rGpg=.sha256). See also
+"solving initial sync"
+(%3hli4+jOqRZ1EE6EckvVh74DIda+hRzabTfvHecxfqU=.sha256).
+
+@Staltz: Yes I'm really looking forward to eventually building a
+hybrid approach, something like: use ssb-ooo to fetch latest messages,
+ignore the sigchain verification of those, and in the meanwhile
+download all the past and index those. Unfortunately we don't yet have
+a way of doing that first part: fetch latest in ssb-ooo style, and
+also some basic things like username and avatar are dependent on often
+very old about messages, and I dont think we have an algorithm that
+can fetch just the right (the latest) about message and send that to a
+requesting peer. It would be awesome if someone would build a
+contained sbot plugin for this initial experience, something that has
+a pull stream in reverse, so you can fetch latest ooo messages kind of
+like how you fetch blobs, and then progressively fetches remaining ooo
+messages to complement that (such as about messages, like messages,
+other acquaintances in threads, etc). And then the full download can
+be displayed as a notification, with a pause/resume button for those
+that want to control the incoming data. That's the dream situation.
+
 ## Performance
 
 These are some notes on the current js implementation for 100k
