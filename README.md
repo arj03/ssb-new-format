@@ -35,6 +35,7 @@ The id (or cipherlink) of the message is hash of the above fields.
 
  - version number
  - seqno
+ - author
  - size of encoded content in bytes
 
  - content
@@ -65,6 +66,8 @@ upgrade them either by an extension as currently used or using
 something like
 [yamf-hash](https://github.com/AljoschaMeyer/yamf-hash).
 
+While we are at it, we should support multiple signing key types.
+
 SSB related Considerations:
  - Backwards compatibility: I think we should use this format for new
    messages only. Old stay the same. There is the issue of linking the
@@ -75,20 +78,20 @@ SSB related Considerations:
    learning towards the same-as option.
  - Message size restriction? Might be good to lift it from 16kb to
    something like 64kb?
+ - Multiple signing key types:
+   %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 # Content
 
-Must include the following fields from the old format: timestamp,
-author and type. Still schemaless. 
+Should include the following fields from the old format: timestamp and
+type. Still schemaless.
 
 The content should be encoded in a canonical format. With the same
 encoding as the overall message format. I don't think the format needs
 very much more than what json support. Most importantly it must be
 well spec'ed. Preferably with multiple existing implementations.
 
-While we are at it, we should support multiple signing types.
-
-Also define a better way of specifying private messages instead of it
+Define a better way of specifying private messages instead of it
 being just a special string.
 
 Considerations:
@@ -97,7 +100,6 @@ Considerations:
    that the server hasn't left some of them out. This combined with
    partial replication could open up for better onboarding and lighter
    clients.
- - Multiple signing key types: %tr82vmrplCxXQNxQsl3vbIzg+EjT0ZtT0jZMF5ZiHqM=.sha256
 
 ## Performance
 
