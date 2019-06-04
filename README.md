@@ -99,7 +99,7 @@ Considerations:
    messages of a specific type, say books, chess or abouts and verify
    that the server hasn't left some of them out. This combined with
    partial replication could open up for better onboarding and lighter
-   clients.
+   clients. The idea of namespaces instead are starting to grow on me.
 
 ## Performance
 
