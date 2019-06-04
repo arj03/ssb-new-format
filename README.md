@@ -94,12 +94,28 @@ well spec'ed. Preferably with multiple existing implementations.
 Define a better way of specifying private messages instead of it
 being just a special string.
 
-Considerations:
+Rejected considerations:
  - Require a seqno per type. This would allow one to fetch all
    messages of a specific type, say books, chess or abouts and verify
    that the server hasn't left some of them out. This combined with
    partial replication could open up for better onboarding and lighter
-   clients. The idea of namespaces instead are starting to grow on me.
+   clients. 
+   
+   A different way to implement the same thing as above is to
+   introduce namespaces at the transport level. These work as
+   subfeeds as a way to group mesages into collections, such as
+   gatherings and their edits or books. It could also be used for
+   having a subfeed for personal stuff, work stuff etc. The reason
+   to add it at this level, is that it would allow a way for the
+   replication to specify that they are only interested in a subset
+   of all messages. And it would be 100% backwords compatible by
+   just not using the field.
+   
+   The reason I'm putting this into the rejected ideas pile is that
+   I don't think we should put these concerns into the protocol
+   level. Similar to how #channels work and how tags are a much more
+   general concept of the same idea, we should strive to keep the
+   core as minimal as possible.
 
 ## Performance
 
