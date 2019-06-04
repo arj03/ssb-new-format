@@ -151,6 +151,12 @@ other acquaintances in threads, etc). And then the full download can
 be displayed as a notification, with a pause/resume button for those
 that want to control the incoming data. That's the dream situation.
 
+@arj what if [peer-invites](https://github.com/ssbc/ssb-peer-invites)
+used the private field to include the latest seqno of the about of all
+the contacts they followed. With this you could start by downloading
+something like the latest 20 messages + the about for the people that
+person was following and have something to show pretty quickly?
+
 ## Performance
 
 These are some notes on the current js implementation for 100k
