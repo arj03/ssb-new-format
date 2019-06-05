@@ -116,14 +116,19 @@ Rejected considerations:
    level. Similar to how #channels work and how tags are a much more
    general concept of the same idea, we should strive to keep the
    core as minimal as possible.
+   
+   See replication section for more info.
 
 # Replication / RPC
 
 This section is currently just notes:
 
-- ssb-ebt: replicate will replicate multiple feeds
+- ssb-ebt: replicate multiple feeds
 - Legacy replication (ssb-replicate) createHistoryStream per feed
+- ssb-ooo request any message by hash id
 - blobs: get (max size option), createWants
+
+Related: [gossip-query](https://github.com/dominictarr/gossip-query)
 
 On initial sync:
 
