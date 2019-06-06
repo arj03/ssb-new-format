@@ -190,7 +190,7 @@ JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: jso
 Performance of [canonical
 cbor](https://tools.ietf.org/html/rfc7049#section-3.9) seems really
 bad. More info
-[here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Related to ["cannonical"](https://github.com/pyfisch/cbor/issues/17) and a revised spec.
+[here](https://github.com/dignifiedquire/borc/issues/22#issuecomment-445550315). Related to ["canonical"](https://github.com/pyfisch/cbor/issues/17) and a revised spec.
 
 [Matrix](https://matrix.org/docs/spec/appendices.html#canonical-json) also uses "canonical" json. Relevant [discussion](https://github.com/matrix-org/matrix-doc/issues/1013).
 
