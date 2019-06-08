@@ -177,8 +177,7 @@ So this basically tells us that it will be hard to get much faster for
 stuff like initial replication. Even rust, go and c should be using
 libsodium or something similar so they shouldn't be able to much
 faster. Instead I think we should focus on things that can be used to
-improve initial replication such a seq no on type and partial
-replication.
+improve initial replication.
 
 ## Other
 
