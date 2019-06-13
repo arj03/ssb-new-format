@@ -172,21 +172,23 @@ bad. More info
 
 ### Message types
 
-My database has the following top message types:
+My database has the following top message (roughly 875k) types:
 
- 269447 "type": "vote",
- 173264 "type": "post",
- 167326 "type": "contact",
-  93208 "type": "private",
-  57087 "type": "channel",
-  33476 "type": "about",
-  24199 "type": "chess_move",
-  17646 "type": "pub",
-  10681 "type": "image/jpeg",
-   8915 "type": "git-update",
-   5809 "type": "image/png",
+| Type       | Count  |
+| ----       | ----   |
+| vote       | 269447 |
+| post       | 173264 |
+| contact    | 167326 |
+| private    | 93208  |
+| channel    | 57087  |
+| about      | 33476  |
+| chess_move | 24199  |
+| pub        | 17646  |
+| image/jpeg | 10681  |
+| git-update | 8915   |
+| image/png  | 5809   |
 
-456k messages from hops=1 (370 feeds, 1232 on average)
+456k messages within hops=1 (370 feeds, 1.2k on average, longest 25k)
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
