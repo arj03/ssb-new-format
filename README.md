@@ -156,6 +156,9 @@ libsodium or something similar so they shouldn't be able to much
 faster. Instead I think we should focus on things that can be used to
 improve initial replication.
 
+A smaller signed format (see message signing format) doesn't seem to
+make much improvements in the validation speed.
+
 ## Other
 
 JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
