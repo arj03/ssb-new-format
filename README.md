@@ -170,6 +170,24 @@ bad. More info
 
 [Matrix](https://matrix.org/docs/spec/appendices.html#canonical-json) also uses "canonical" json. Relevant [discussion](https://github.com/matrix-org/matrix-doc/issues/1013).
 
+### Message types
+
+My database has the following top message types:
+
+ 269447 "type": "vote",
+ 173264 "type": "post",
+ 167326 "type": "contact",
+  93208 "type": "private",
+  57087 "type": "channel",
+  33476 "type": "about",
+  24199 "type": "chess_move",
+  17646 "type": "pub",
+  10681 "type": "image/jpeg",
+   8915 "type": "git-update",
+   5809 "type": "image/png",
+
+456k messages from hops=1 (370 feeds, 1232 on average)
+
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
  - compact legacy message representation %043+a3lLbXxJM0L7QDJ3rAKTb6sWXuAkRuhS/wOT+hQ=.sha256
