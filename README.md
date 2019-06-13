@@ -146,9 +146,10 @@ messages on my slow machine:
 
  - json stringify is 1.5s
  - validate is 60s
-   - hash of message to key is roughly 10%
-   - ensuring canonical (regex) is roughly 10%
-   - libsodium verify is roughly 80%
+   - hash of message to key ~10%
+   - ensuring canonical (regex) ~10%
+   - string to buffer conversion and back around libsodium ~8%
+   - libsodium verify ~72%
 
 So this basically tells us that it will be hard to get much faster for
 stuff like initial replication. Even rust, go and c should be using
