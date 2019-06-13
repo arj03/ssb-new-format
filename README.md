@@ -121,16 +121,16 @@ Rejected considerations:
 
 # Replication / RPC
 
-This section is currently just notes:
+Current JS parts:
 
 - ssb-ebt: replicate multiple feeds
 - Legacy replication (ssb-replicate) createHistoryStream per feed
-- ssb-ooo request any message by hash id
+- ssb-ooo request any message by hash id. These are not indexed!
 - blobs: get (max size option), createWants
 
 Related: [gossip-query](https://github.com/dominictarr/gossip-query)
 
-On initial sync:
+On initial sync (see also performance section):
 
 @Piet: This (replication limiter) module does what it's intended to
 do, but it turns out the bottleneck is not actually in replication as
@@ -138,29 +138,6 @@ we originally thought
 (%HJTzjmTcr8FsKt34wmvN5ett4imneEzHp7dCab2rGpg=.sha256). See also
 "solving initial sync"
 (%3hli4+jOqRZ1EE6EckvVh74DIda+hRzabTfvHecxfqU=.sha256).
-
-@Staltz: Yes I'm really looking forward to eventually building a
-hybrid approach, something like: use ssb-ooo to fetch latest messages,
-ignore the sigchain verification of those, and in the meanwhile
-download all the past and index those. Unfortunately we don't yet have
-a way of doing that first part: fetch latest in ssb-ooo style, and
-also some basic things like username and avatar are dependent on often
-very old about messages, and I dont think we have an algorithm that
-can fetch just the right (the latest) about message and send that to a
-requesting peer. It would be awesome if someone would build a
-contained sbot plugin for this initial experience, something that has
-a pull stream in reverse, so you can fetch latest ooo messages kind of
-like how you fetch blobs, and then progressively fetches remaining ooo
-messages to complement that (such as about messages, like messages,
-other acquaintances in threads, etc). And then the full download can
-be displayed as a notification, with a pause/resume button for those
-that want to control the incoming data. That's the dream situation.
-
-@arj what if [peer-invites](https://github.com/ssbc/ssb-peer-invites)
-used the private field to include the latest seqno of the about of all
-the contacts they followed. With this you could start by downloading
-something like the latest 20 messages + the about for the people that
-person was following and have something to show pretty quickly?
 
 ## Performance
 
@@ -200,3 +177,4 @@ bad. More info
  - Argument against cannonical formats for signed data  %25FI3kBXdFD6j%2BuISXluhirJm70QZpJIYzc65OX1XPJ5c%3D.sha256
  - bamboo discussion %9LKTBkkOSfGuGkTbSTRBVVPrznIrr61qtLeLWLGclXI=.sha256
  - lipmaalinks %3W2iK1uLh29DQw7q9+vR2yrw5HmMHXJNXrZv1BQ0z/k=.sha256
+ - redesign notes %N+mBPUgxLyYM9Ab3EXDSebR5idQ+M/xjopt5/ZOGZUY=.sha256
