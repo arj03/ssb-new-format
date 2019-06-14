@@ -195,6 +195,8 @@ My database has the following top message (roughly 875k) types:
 
 456k messages within hops=1 (370 feeds, 1.2k on average, longest 25k)
 
+409k messages within hops=1 and post within last 3 months (207 feeds, 1.98k on average, longest 25k)
+
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
  - compact legacy message representation %043+a3lLbXxJM0L7QDJ3rAKTb6sWXuAkRuhS/wOT+hQ=.sha256
