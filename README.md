@@ -144,7 +144,8 @@ we originally thought
 These are some notes on the current js implementation for 100k
 messages on my slow machine:
 
- - json stringify is 1.5s
+ - bench-ssb json stringify ~1.9s, parse ~1.9s
+ - more realistic json data: ~2.2s, parse ~2.1s
  - validate is 60s
    - hash of message to key ~10%
    - ensuring canonical (regex) ~10%
