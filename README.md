@@ -21,6 +21,7 @@ taken from [birch](https://github.com/cn-uofbasel/ssb-birch).
  - lipmaalink (log link)
  - hash af content
  - status enum
+ - author
  
 The digital signature of the above fields will be hmac'ed with the
 signing cap just as in the current system, to make sure that messages
@@ -35,7 +36,6 @@ The id (or cipherlink) of the message is hash of the above fields.
 
  - version number
  - seqno
- - author
  - size of encoded content in bytes
 
  - content
@@ -205,3 +205,4 @@ My database has the following top message (roughly 875k) types:
  - bamboo discussion %9LKTBkkOSfGuGkTbSTRBVVPrznIrr61qtLeLWLGclXI=.sha256
  - lipmaalinks %3W2iK1uLh29DQw7q9+vR2yrw5HmMHXJNXrZv1BQ0z/k=.sha256
  - redesign notes %N+mBPUgxLyYM9Ab3EXDSebR5idQ+M/xjopt5/ZOGZUY=.sha256
+ - author field in signed data %1AsqTRxdVrbfypC69W7uWbMClQteNNnnl3ohzbpu3Xw=.sha256
