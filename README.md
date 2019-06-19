@@ -161,6 +161,12 @@ improve initial replication.
 A smaller signed format (see message signing format) doesn't seem to
 make much improvements in the validation speed.
 
+Wasm version compared c version of libsodium is almost the same
+speedon my laptop, around 7% slower.
+
+Performance on phone compared to laptop is that phone is 64% slower in
+validate, but json performance is roughly the same.
+
 ## Other
 
 JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
