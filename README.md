@@ -212,3 +212,4 @@ My database has the following top message (roughly 875k) types:
  - lipmaalinks %3W2iK1uLh29DQw7q9+vR2yrw5HmMHXJNXrZv1BQ0z/k=.sha256
  - redesign notes %N+mBPUgxLyYM9Ab3EXDSebR5idQ+M/xjopt5/ZOGZUY=.sha256
  - author field in signed data %1AsqTRxdVrbfypC69W7uWbMClQteNNnnl3ohzbpu3Xw=.sha256
+ - cbor part of webauth spec: https://w3c.github.io/webauthn/#dom-authenticatorattestationresponse-attestationobject
