@@ -167,7 +167,18 @@ speedon my laptop, around 7% slower.
 Performance on phone compared to laptop is that phone is 64% slower in
 validate, but json performance is roughly the same.
 
-There is a way to [not validate everything](https://github.com/ssbc/ssb-validate#shortcuts-for-js-mode-api).
+There is a way to [not validate
+everything](https://github.com/ssbc/ssb-validate#shortcuts-for-js-mode-api).
+
+Browser (ws connection to sbot localhost):
+
+Very high variance, numbers are avg of 3 runs
+
+1 feed (6500 msgs)
+
+- createHistoryStream ~ 16 s
+- createHistoryStream + validate only end ~ 17.6 s
+- createHistoryStream + validate all ~ 22.4 s
 
 ## Other
 
