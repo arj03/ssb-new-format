@@ -146,7 +146,7 @@ messages on my slow machine:
 
  - bench-ssb json stringify ~1.9s, parse ~1.9s
  - more realistic json data: ~2.2s, parse ~2.1s
- - validate is 60s
+ - validate is 60s, 1.66 msg / ms
    - hash of message to key ~10%
    - ensuring canonical (regex) ~10%
    - string to buffer conversion and back around libsodium ~8%
@@ -204,6 +204,26 @@ My database has the following top message (roughly 875k) types:
 456k messages within hops=1 (370 feeds, 1.2k on average, longest 25k)
 
 409k messages within hops=1 and post within last 3 months (207 feeds, 1.98k on average, longest 25k)
+
+Streaming (and filtering) locally by type using createHistStream:
+9052.317ms, 16346 msgs = 1.8 msg/ms. Will be slightly faster with
+flumelog-aligned-offset. Noauth is roughly 2.8 msg/ms.
+
+Direct streaming of the log is 17.2 msg/ms.
+
+The main reason this is slow is because it uses ssb client to connect
+to the sbot server. Running the same functions locally is as fast as
+streaming.
+
+Filtering over network 450k message would be at least 250 seconds.
+Validating the same messages would be 270 seconds.
+
+----
+
+Feed type is signature algorithm + signing format and validation rules?
+Outer format is still json?
+
+%LrMcs9tqgOMLPGv6mN5Z7YYxRQ8qn0JRhVi++OyOvQo=.sha256
 
 ## Links
  - existing SSB spec: https://spec.scuttlebutt.nz/
