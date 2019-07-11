@@ -167,6 +167,8 @@ speedon my laptop, around 7% slower.
 Performance on phone compared to laptop is that phone is 64% slower in
 validate, but json performance is roughly the same.
 
+There is a way to [not validate everything](https://github.com/ssbc/ssb-validate#shortcuts-for-js-mode-api).
+
 ## Other
 
 JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
