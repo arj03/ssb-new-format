@@ -178,6 +178,7 @@ Very high variance, numbers are avg of 3 runs
 
 - createHistoryStream ~ 16 s
 - createHistoryStream + validate only end ~ 17.6 s
+- createHistoryStream + randomly validate every 1/50 ~ 18.0 s
 - createHistoryStream + validate all ~ 22.4 s
 
 ## Other
