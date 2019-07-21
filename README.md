@@ -181,6 +181,11 @@ Very high variance, numbers are avg of 3 runs
 - createHistoryStream + randomly validate every 1/50 ~ 18.0 s
 - createHistoryStream + validate all ~ 22.4 s
 
+Downloading 7300 messages from 139 feeds:
+
+Download + validate: 35sek
+Download + validate + insert type post (1616 messages): 39sek
+
 ## Other
 
 JS [Benchmark](https://github.com/ssbc/bench-ssb/tree/test-encodings) on i7: json 0.38, cbor 1.76, bipf 1.14
