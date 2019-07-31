@@ -1,4 +1,4 @@
-This is WIP and not fully processed
+The following were my thoughts going into the protocol meeting in Hamburg.
 
 # Feed
 
@@ -185,6 +185,12 @@ Downloading 7300 messages from 139 feeds:
 
 Download + validate: 35sek
 Download + validate + insert type post (1616 messages): 39sek
+
+Noauth test:
+
+- SHS download + validate + insert type post (1203 messages): 32sek
+- Noauth download + validate + insert type post (1203 messages): 23sek
+- Noauth download + validate + insert type post, no console log (1203 messages): 20sek
 
 ## Other
 
